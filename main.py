@@ -16,7 +16,11 @@ app = FastAPI()
 
 app.include_router(user.router)
 app.include_router(image.router)
+if not os.path.exists('./images'):
+    os.mkdir('./images', 0o777)
 app.mount("/images", StaticFiles(directory="images"), name="images")
+if not os.path.exists('./pdf'):
+    os.mkdir('./pdf', 0o777)
 app.mount("/pdf", StaticFiles(directory="pdf"), name="pdf")
 
 
