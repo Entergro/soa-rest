@@ -1,0 +1,6 @@
+fastapi
+pika
+sqlalchemy
+uvicorn
+python-multipart
+borb
