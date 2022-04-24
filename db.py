@@ -24,7 +24,7 @@ def get_db():
 host = os.environ.get('AMQP_HOST', 'host.docker.internal')
 
 connection = pika.BlockingConnection(
-    pika.ConnectionParameters(host='localhost'))
+    pika.ConnectionParameters(host=host))
 channel = connection.channel()
 
 
